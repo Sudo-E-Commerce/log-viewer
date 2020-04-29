@@ -1,0 +1,30 @@
+{
+    "name": "sudo/logs",
+    "description": "Log Sudo package",
+    "type": "library",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Nguyen Viet Hieu",
+            "email": "hieunvph04479@gmail.com"
+        }
+    ],
+    "require": {
+        "sudo/core": "*@dev",
+        "arcanedev/log-viewer": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sudo\\Log\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sudo\\Log\\Providers\\LogServiceProvider"
+            ],
+            "aliases": {}
+        }
+    }
+}
