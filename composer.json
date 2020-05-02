@@ -12,7 +12,7 @@
     ],
     "require": {
         "sudo/core": "*@dev",
-        "arcanedev/log-viewer": "^5.2"
+        "arcanedev/log-viewer": "^7.0"
     },
     "autoload": {
         "psr-4": {
