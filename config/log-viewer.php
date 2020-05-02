@@ -53,7 +53,7 @@ return [
         'attributes' => [
             'prefix'     => '/admin/logs',
 
-            'middleware' => env('ARCANEDEV_LOGVIEWER_MIDDLEWARE') ? explode(',', env('ARCANEDEV_LOGVIEWER_MIDDLEWARE')) : ['web', 'auth-admin'],
+            'middleware' => env('SUDO_LOGVIEWER_MIDDLEWARE') ? explode(',', env('SUDO_LOGVIEWER_MIDDLEWARE')) : ['web', 'auth-admin', 'only-dev'],
         ],
     ],
 
