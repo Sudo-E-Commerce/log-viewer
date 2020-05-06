@@ -3,7 +3,7 @@
     "description": "Log Sudo package",
     "type": "library",
     "license": "MIT",
-    "minimum-stability": "dev",
+    "minimum-stability": "1.0",
     "authors": [
         {
             "name": "Nguyen Viet Hieu",
