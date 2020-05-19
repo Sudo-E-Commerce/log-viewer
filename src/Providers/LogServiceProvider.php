@@ -85,20 +85,21 @@ class LogServiceProvider extends ServiceProvider
     public function publish()
     {
         if ($this->app->runningInConsole()) {
-            // Chạy riêng log
-            $this->publishes([
+            $assets = [
+                //
+            ];
+            $config = [
                 __DIR__.'/../../config/log-viewer.php' => config_path('log-viewer.php'),
-            ], 'sudo/log');
-            $this->publishes([
-                __DIR__.'/../../config/log-viewer.php' => config_path('log-viewer.php'),
-            ], 'sudo/log/config');
+            ];
+            $all = array_merge($assets, $config);
+            // Chạy riêng
+            $this->publishes($all, 'sudo/log');
+            $this->publishes($assets, 'sudo/log/assets');
+            $this->publishes($config, 'sudo/log/config');
             // Khởi chạy chung theo core
-            $this->publishes([
-                __DIR__.'/../../config/log-viewer.php' => config_path('log-viewer.php'),
-            ], 'sudo/core');
-            $this->publishes([
-                __DIR__.'/../../config/log-viewer.php' => config_path('log-viewer.php'),
-            ], 'sudo/core/config');
+            $this->publishes($all, 'sudo/core');
+            $this->publishes($assets, 'sudo/core/assets');
+            $this->publishes($config, 'sudo/core/config');
         }
     }
 
