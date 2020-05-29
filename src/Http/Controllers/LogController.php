@@ -22,6 +22,7 @@ class LogController extends Controller
      * Url = /admin/logs/view
      */
 	public function view() {
+        loadStyleAdmin();
 		return view('Log::view');
 	}
 
