@@ -51,7 +51,7 @@ return [
         'enabled'    => true,
 
         'attributes' => [
-            'prefix'     => env('SUDO_LOGVIEWER_PATH') ? env('SUDO_LOGVIEWER_PATH') : '/admin/logs',
+            'prefix'     => env('SUDO_LOGVIEWER_PATH') ? env('SUDO_LOGVIEWER_PATH') : '/'.env('ADMIN_DIR', 'admin').'/logs',
 
             'middleware' => env('SUDO_LOGVIEWER_MIDDLEWARE') ? explode(',', env('SUDO_LOGVIEWER_MIDDLEWARE')) : ['web', 'auth-admin', 'only-dev'],
         ],
