@@ -35,6 +35,8 @@ class LogServiceProvider extends ServiceProvider
 
 	public function boot()
 	{
+        config([ 'logging.default' => 'daily' ]);
+
 		$this->registerModule();
 
         $this->publish();
